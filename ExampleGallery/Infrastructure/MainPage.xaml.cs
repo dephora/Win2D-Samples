@@ -64,5 +64,10 @@ namespace ExampleGallery
                 currentVisualState = newVisualState;
             }            
         }
+
+        private void gridView_SelectionChanged()
+        {
+
+        }
     }
 }

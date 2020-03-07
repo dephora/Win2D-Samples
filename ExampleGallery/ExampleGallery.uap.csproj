@@ -158,6 +158,9 @@
     <Compile Include="BackgroundTaskExample.xaml.cs">
       <DependentUpon>BackgroundTaskExample.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BezCreate.xaml.cs">
+      <DependentUpon>BezCreate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BitmapRotation.xaml.cs">
       <DependentUpon>BitmapRotation.xaml</DependentUpon>
     </Compile>
@@ -181,6 +184,7 @@
     </Compile>
     <Compile Include="GlowTextCustomControl.cs" />
     <Compile Include="Infrastructure\AppIconGenerator.cs" />
+    <Compile Include="Infrastructure\Bezier.cs" />
     <Compile Include="Infrastructure\ColorPicker.cs" />
     <Compile Include="Infrastructure\CustomThumbnails.cs" />
     <Compile Include="Infrastructure\DeveloperTools.xaml.cs">
@@ -200,6 +204,9 @@
     </Compile>
     <Compile Include="CustomEffects.xaml.cs">
       <DependentUpon>CustomEffects.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Bez.xaml.cs">
+      <DependentUpon>Bez.xaml</DependentUpon>
     </Compile>
     <Compile Include="Mandelbrot.xaml.cs">
       <DependentUpon>Mandelbrot.xaml</DependentUpon>
@@ -334,9 +341,13 @@
     <Content Include="SpriteSheets\ForestTiles.png" />
     <Content Include="SpriteSheets\WizardIdleRight.png" />
     <Content Include="SpriteSheets\WizardWalkRight.png" />
+    <Content Include="Thumbnails\BezCreateNarrow.png" />
+    <Content Include="Thumbnails\BezCreateWide.png" />
     <Content Include="Thumbnails\CameraEffectNarrow.png" />
     <Content Include="Thumbnails\CameraEffectWide.png" />
+    <Content Include="Thumbnails\BezNarrow.png" />
     <Content Include="Thumbnails\GradientMeshNarrow.png" />
+    <Content Include="Thumbnails\BezWide.png" />
     <Content Include="Thumbnails\GradientMeshWide.png" />
     <Content Include="Thumbnails\InkNarrow.png" />
     <Content Include="Thumbnails\InkWide.png" />
@@ -454,6 +465,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="BezCreate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="CameraEffectExample.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -463,6 +478,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="InkExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Bez.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

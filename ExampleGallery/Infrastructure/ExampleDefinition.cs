@@ -52,6 +52,8 @@ namespace ExampleGallery
             new ExampleDefinition("Particle System", typeof(ParticleExample)),
             new ExampleDefinition("Sprite Sheets", typeof(SpriteSheets)),
             new ExampleDefinition("Vector Art", typeof(VectorArt)),
+            new ExampleDefinition("Bez", typeof(Bez)),
+            new ExampleDefinition("BezCreate", typeof(BezCreate)),
 
             // Show capabilities of the API.
             new ExampleDefinition("Effects", typeof(EffectsExample)),
