@@ -18,26 +18,55 @@ Licensed under the MIT License. See LICENSE.txt in the project root for license 
     d:DesignHeight="300"
     d:DesignWidth="400"
     Loaded="control_Loaded"
+    SizeChanged="OnSizeChanged"
     Unloaded="control_Unloaded">
 
     <Grid>
-        <ScrollViewer x:Name="scrollViewer"
-                      VerticalScrollBarVisibility="Auto"
-                      HorizontalScrollBarVisibility="Auto"
+
+        <Grid                
+                PointerMoved="OnPointerMoved"
+                PointerPressed="OnPointerPressed"
+                PointerReleased="OnPointerReleased">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />                
+                <RowDefinition Height="*"/>
+
+            </Grid.RowDefinitions>
+
+            <CheckBox
+                    Margin="5,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Checked="OnShowControlPoints"
+                    Content="Show Control Points"
+                    Foreground="Black"
+                    Unchecked="OnHideControlPoints" />
+            <Button
+                    Width="120"
+                    Height="30"
+                    Margin="5,0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Click="OnClearSplines"
+                    Content="Clear" />
+            <ScrollViewer x:Name="scrollViewer"
+                      VerticalScrollMode="Enabled"
+                      HorizontalScrollMode="Enabled"
+                      VerticalScrollBarVisibility="Visible"
+                      HorizontalScrollBarVisibility="Visible"
                       ZoomMode="Enabled"
                       MinZoomFactor="0.5"
                       MaxZoomFactor="8000"
+                      Grid.Row="2"
                       ViewChanged="ScrollViewer_ViewChanged">
-            <Grid>
-                <canvas:CanvasVirtualControl x:Name="canvas" 
-                                             CreateResources="Canvas_CreateResources" 
-                                             RegionsInvalidated="Canvas_RegionsInvalidated"
-                                             KeyDown="Canvas_KeyDown"
-                                             IsTabStop="true"
-                                             Width="512"
-                                             Height="384"/>
-            </Grid>
-        </ScrollViewer>
+
+                <canvas:CanvasControl x:Name="canvas"                                      
+                                      Margin="0,0,0,0"
+                                      ClearColor="Black"
+                                      Draw="OnDraw" />
+
+            </ScrollViewer>
+        </Grid>
 
         <TextBlock x:Name="helpText" IsHitTestVisible="False"/>
     </Grid>
