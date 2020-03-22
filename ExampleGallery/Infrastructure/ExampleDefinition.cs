@@ -43,6 +43,14 @@ namespace ExampleGallery
     {
         static ExampleDefinition[] definitions =
         {
+
+            // V
+            new ExampleDefinition("Sandbox1", typeof(Sandbox1)),
+            new ExampleDefinition("Sandbox DrawImage Emulations", typeof(SandboxDrawImageEmulations)),
+            new ExampleDefinition("Bez", typeof(Bez)),
+            new ExampleDefinition("BezCreate", typeof(BezCreate)),
+            new ExampleDefinition("Sandbox Effects Example", typeof(SandboxEffectsExample)),
+            
             // Visual demos.
             new ExampleDefinition("Burning Text", typeof(BurningTextExample)),
             new ExampleDefinition("Mandelbrot", typeof(Mandelbrot)),
@@ -52,8 +60,8 @@ namespace ExampleGallery
             new ExampleDefinition("Particle System", typeof(ParticleExample)),
             new ExampleDefinition("Sprite Sheets", typeof(SpriteSheets)),
             new ExampleDefinition("Vector Art", typeof(VectorArt)),
-            new ExampleDefinition("Bez", typeof(Bez)),
-            new ExampleDefinition("BezCreate", typeof(BezCreate)),
+            
+            
 
             // Show capabilities of the API.
             new ExampleDefinition("Effects", typeof(EffectsExample)),
@@ -97,6 +105,7 @@ namespace ExampleGallery
             new ExampleDefinition("SpriteBatch Performance", typeof(SpriteBatchPerf)),
             new ExampleDefinition("Developer Tools", typeof(DeveloperTools)),
             new ExampleDefinition("About", typeof(About)),
+            
         };
 
         public static ExampleDefinition[] Definitions { get { return definitions; } }

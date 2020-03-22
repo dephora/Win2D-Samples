@@ -179,6 +179,12 @@
     <Compile Include="Direct3DInteropExample.xaml.cs">
       <DependentUpon>Direct3DInteropExample.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SandboxEffectsExample.xaml.cs">
+      <DependentUpon>SandboxEffectsExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SandboxDrawImageEmulations.xaml.cs">
+      <DependentUpon>SandboxDrawImageEmulations.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DrawImageEmulations.xaml.cs">
       <DependentUpon>DrawImageEmulations.xaml</DependentUpon>
     </Compile>
@@ -207,6 +213,12 @@
     </Compile>
     <Compile Include="Bez.xaml.cs">
       <DependentUpon>Bez.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sandbox2.xaml.cs">
+      <DependentUpon>Sandbox2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sandbox1.xaml.cs">
+      <DependentUpon>Sandbox1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Mandelbrot.xaml.cs">
       <DependentUpon>Mandelbrot.xaml</DependentUpon>
@@ -329,6 +341,12 @@
     <None Include="TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="imageBeardedSeal.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="imageVRMine.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="RuntimeDirectives.rd.xml" />
     <Content Include="Assets\Logo.scale-100.png" />
     <Content Include="Assets\sample.svg" />
@@ -341,13 +359,9 @@
     <Content Include="SpriteSheets\ForestTiles.png" />
     <Content Include="SpriteSheets\WizardIdleRight.png" />
     <Content Include="SpriteSheets\WizardWalkRight.png" />
-    <Content Include="Thumbnails\BezCreateNarrow.png" />
-    <Content Include="Thumbnails\BezCreateWide.png" />
     <Content Include="Thumbnails\CameraEffectNarrow.png" />
     <Content Include="Thumbnails\CameraEffectWide.png" />
-    <Content Include="Thumbnails\BezNarrow.png" />
     <Content Include="Thumbnails\GradientMeshNarrow.png" />
-    <Content Include="Thumbnails\BezWide.png" />
     <Content Include="Thumbnails\GradientMeshWide.png" />
     <Content Include="Thumbnails\InkNarrow.png" />
     <Content Include="Thumbnails\InkWide.png" />
@@ -473,6 +487,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="SandboxEffectsExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SandboxDrawImageEmulations.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="GradientMeshExample.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -482,6 +504,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Bez.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Sandbox2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Sandbox1.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

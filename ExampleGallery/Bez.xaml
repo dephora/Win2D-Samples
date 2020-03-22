@@ -21,22 +21,27 @@ Licensed under the MIT License. See LICENSE.txt in the project root for license 
     Unloaded="control_Unloaded">
 
     <Grid>
-        <ScrollViewer x:Name="scrollViewer"
+        <!--<ScrollViewer x:Name="scrollViewer"
                       VerticalScrollBarVisibility="Auto"
                       HorizontalScrollBarVisibility="Auto"
                       ZoomMode="Enabled"
                       MinZoomFactor="0.5"
                       MaxZoomFactor="8000"
+                      ViewChanged="ScrollViewer_ViewChanged">-->
+        <ScrollViewer x:Name="scrollViewer"
+                      VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Auto"
+                      ZoomMode="Enabled"
                       ViewChanged="ScrollViewer_ViewChanged">
-            <Grid>
-                <canvas:CanvasVirtualControl x:Name="canvas" 
+            
+                <canvas:CanvasVirtualControl x:Name="canvas"                                            
                                              CreateResources="Canvas_CreateResources" 
                                              RegionsInvalidated="Canvas_RegionsInvalidated"
                                              KeyDown="Canvas_KeyDown"
                                              IsTabStop="true"
                                              Width="512"
                                              Height="384"/>
-            </Grid>
+            
         </ScrollViewer>
 
         <TextBlock x:Name="helpText" IsHitTestVisible="False"/>

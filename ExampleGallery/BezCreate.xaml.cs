@@ -36,7 +36,8 @@ namespace ExampleGallery
         private Vector2 _endPoint;
         private bool _isDragging = false;
         private bool _drawSpline = false;
-        private bool _showControlPoints = false;
+        //private bool _showControlPoints = false;
+        private bool _showControlPoints = true;
 
         List<Tuple<Vector2, Vector2, Vector2, Vector2, Color>> _pointData = new List<Tuple<Vector2, Vector2, Vector2, Vector2, Color>>();
         private Vector2 _controlPoint1;
@@ -163,6 +164,8 @@ namespace ExampleGallery
             _controlPoint1 = Vector2.Zero;
             _controlPoint2 = Vector2.Zero;
         }
+
+       
 
         private void OnShowControlPoints(object sender, RoutedEventArgs e)
         {
@@ -300,6 +303,7 @@ namespace ExampleGallery
 
                 e.Handled = true;
             }
+
         }
 
 
@@ -345,5 +349,43 @@ namespace ExampleGallery
         }
 
         
+
+        private void canvas_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            if (_showControlPoints == false)
+            {
+                _showControlPoints = true;
+            }
+            else
+            {
+                _showControlPoints = false;
+            }
+
+            
+            canvas.Invalidate();
+
+        }
+
+        //private void DoEffect(CanvasDrawingSession ds, Size size, float amount)
+        //{
+        //    size.Width = size.Width - ExpandAmount;
+        //    size.Height = size.Height - ExpandAmount;
+
+        //    var offset = (float)(ExpandAmount / 2);
+
+        //    using (var textLayout = CreateTextLayout(ds, size))
+        //    using (var textCommandList = new CanvasCommandList(ds))
+        //    {
+        //        using (var textDs = textCommandList.CreateDrawingSession())
+        //        {
+        //            textDs.DrawTextLayout(textLayout, 0, 0, GlowColor);
+        //        }
+
+        //        glowEffectGraph.Setup(textCommandList, amount);
+        //        ds.DrawImage(glowEffectGraph.Output, offset, offset);
+
+        //        ds.DrawTextLayout(textLayout, offset, offset, TextColor);
+        //    }
+        //}
     }
 }

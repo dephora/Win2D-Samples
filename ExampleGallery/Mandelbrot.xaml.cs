@@ -18,7 +18,7 @@ using Windows.UI.Xaml.Input;
 
 namespace ExampleGallery
 {
-    public sealed partial class Bez : UserControl
+    public sealed partial class Mandelbrot : UserControl
     {
         PixelShaderEffect mandelbrotEffect;
         TableTransferEffect colorizeEffect;
@@ -26,7 +26,7 @@ namespace ExampleGallery
         float displayDpi;
 
 
-        public Bez()
+        public Mandelbrot()
         {
             this.InitializeComponent();
         }

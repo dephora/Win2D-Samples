@@ -18,15 +18,14 @@ using Windows.UI.Xaml.Input;
 
 namespace ExampleGallery
 {
-    public sealed partial class Mandelbrot : UserControl
+    public sealed partial class Bez : UserControl
     {
-        PixelShaderEffect mandelbrotEffect;
-        TableTransferEffect colorizeEffect;
+        
 
         float displayDpi;
 
 
-        public Mandelbrot()
+        public Bez()
         {
             this.InitializeComponent();
         }
@@ -39,45 +38,26 @@ namespace ExampleGallery
             if (args.Reason == CanvasCreateResourcesReason.DpiChanged)
                 return;
 
-            args.TrackAsyncAction(Canvas_CreateResourcesAsync(sender).AsAsyncAction());
+            //args.TrackAsyncAction(Canvas_CreateResourcesAsync(sender).AsAsyncAction());
         }
 
 
-        async Task Canvas_CreateResourcesAsync(CanvasVirtualControl sender)
-        {
-            mandelbrotEffect = new PixelShaderEffect(await Utils.ReadAllBytes("Shaders/Mandelbrot.bin"));
-
-            // The Mandelbrot pixel shader outputs grayscale values. To make the result more interesting,
-            // we run it through a TableTransferEffect. This applies a color gradient that goes from black
-            // through blue, cyan, green, yellow, red, magenta, blue again, and finally back toward cyan.
-
-            colorizeEffect = new TableTransferEffect
-            {
-                Source = mandelbrotEffect,
-
-                RedTable   = new float[] { 0, 0, 0, 0, 1, 1, 0.67f, 0, 0    },
-                GreenTable = new float[] { 0, 0, 1, 1, 1, 0, 0,     0, 0.5f },
-                BlueTable  = new float[] { 0, 1, 1, 0, 0, 0, 1,     1, 1    },
-            };
-        }
+        //async Task Canvas_CreateResourcesAsync(CanvasVirtualControl sender)
+        //{
+            
+        //}
 
 
         void Canvas_RegionsInvalidated(CanvasVirtualControl sender, CanvasRegionsInvalidatedEventArgs args)
         {
-            // Configure the Mandelbrot effect to position and scale its output. 
-            const float baseScale = 0.005f;
-            float scale = baseScale * 96 / sender.Dpi;
-            Vector2 translate = baseScale * sender.Size.ToVector2() * new Vector2(-0.75f, -0.5f);
-
-            mandelbrotEffect.Properties["scale"] = scale;
-            mandelbrotEffect.Properties["translate"] = translate;
+            
 
             // Draw the effect to whatever regions of the CanvasVirtualControl have been invalidated.
             foreach (var region in args.InvalidatedRegions)
             {
                 using (var drawingSession = sender.CreateDrawingSession(region))
                 {
-                    drawingSession.DrawImage(colorizeEffect);
+                    //drawingSession.DrawImage(colorizeEffect);
                 }
             }
         }
